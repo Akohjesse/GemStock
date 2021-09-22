@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Admin Panel</title>
+    <link rel="stylesheet" href="/css/admin.css">
+    <link rel="stylesheet" href="/css/dashboard.css">
+    <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="menu-icon">
+           <p>Manage Users</p>
+        </div>
+       <div class="account">
+           <li>Manage  Signals</li>
+       </div>
+   </header>
+    <div class="container block">
+        <div class="dashboard">
+            <div class="welcome">
+                <h1>Welcome to Admin Panel</h1>
+            </div>
+        </div>
+        <div class="post">
+            <h3>Create Signal</h3>
+            <form action="/signals/create" method="post" enctype="application/json">
+               <div class="name">
+                   <label for="name">Header</label><br>
+                  <input type="text" name="name" placeholder="Buy or Sell 0r Hodl">
+               </div>
+               <div class="content">
+                   <label for="signals">Enter Signals</label>
+                  <textarea type="text" name="signals" placeholder="Buy eth @ $"></textarea>
+               </div>
+               <div class="submit">
+                <button type="submit">Post signal</button>
+               </div>
+            </form>
+        </div>
+        <section class="signals">
+            <h3>Posted Signals</h3>
+            <div class="signal-field">
+                  @each(post in posts)
+                     <div class="signal-block">
+                         <h2>{{post.name}}</h2>
+                         <div class="text">
+                          <P> {{decrypt(post.signal)}}</p>
+                         </div>
+                         <div class="date">
+                            <p>{{post.date.toDateString()}}</p>
+                         </div>
+                          <br>
+                         <div class="modify">
+                             <a href="/signals/delete/{{post._id}}">
+                                <div class="delete">
+                                    <i class="ri-delete-bin-line"></i>
+                                 </div>
+                             </a>
+                             
+                         </div>
+                     </div>
+                  @endeach
+            </div>
+        </section>
+    </div>
+    <script src="/js/admin_fuc.js"></script>
+</body>
+</html>

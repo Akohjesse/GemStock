@@ -1,0 +1,61 @@
+@layout('layouts.struct');
+
+@section('formData')
+<div class="container">
+    <div class="signUp">
+        <h3>
+            Sign Up and recieve accurate crypto signals on the go
+        </h3>
+
+        <form id="form" action="/user/signup" method ="POST" encType="application/json">
+
+           <div class="wrap">
+               @if(errors.length > 0)
+                 {{errors}}.forEach((err)=>{
+                     <p>err.msg</p>
+                 })
+               @endif
+
+               @if(success_msg!= '')
+                   <p>{{success_msg}}</p>  
+               @endif
+
+               @if(error_msg!= '')
+                 <p>{{error_msg}}</p>  
+                @endif
+           
+            <input name="username" id="username" type="text" placeholder="Enter Username" required>
+           </div>
+
+
+            <div class="wrap">
+            <input name="email" autocomplete type="email" placeholder="Enter email" required>
+            </div>
+
+            <div class="wrap">
+            <input name="password" type="password" placeholder="Enter Password" required >
+            </div>
+
+            <div class="wrap">
+            <input name="password2" type="password" placeholder="confirm password" required >
+            </div>
+
+            <button class="submit" type="submit" >Sign Up</button>
+            
+              <div class="loginLink">
+                <a href="/user/login">Already have an account? Login here</a>
+              </div>
+            
+
+        </form>
+        <button class="back" onclick="history.back()">Back to home page</button>
+   </div>
+
+   
+</div>
+@endsection
+   
+    
+   
+
+  

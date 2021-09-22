@@ -1,0 +1,11 @@
+node_modules
+/node_modules
+*.css.map
+*.scss
+/public/css/*.scss
+/public/css/anime_.scss
+/public/css/dashboard.scss
+/public/css/main.scss
+/public/css/payments.scss
+/public/css/signup.scss
+./public/css/main.scss

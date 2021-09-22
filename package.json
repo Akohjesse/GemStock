@@ -1,0 +1,39 @@
+{
+  "name": "expert_signals",
+  "version": "1.0.0",
+  "description": "A crypto signals platform",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Akohjesse/expert_signal.git"
+  },
+  "engines": {
+    "node": "16.2.0",
+    "npm": "7.13.0"
+  },
+  "author": "Akoh Jesse",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Akohjesse/expert_signal/issues"
+  },
+  "homepage": "https://github.com/Akohjesse/expert_signal#readme",
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.19.0",
+    "connect-flash": "^0.1.1",
+    "express": "^4.17.1",
+    "express-edge": "^2.0.2",
+    "express-formidable": "^1.2.0",
+    "express-session": "^1.17.2",
+    "express-validator": "^6.12.0",
+    "mongoose": "^5.13.2",
+    "passport": "^0.4.1",
+    "passport-local": "^1.0.0",
+    "swiper": "^6.7.5",
+    "tslib": "^2.3.0"
+  }
+}

@@ -1,0 +1,83 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  font-family: 'Montserrat', sans-serif;
+}
+
+.container {
+  padding: 10px;
+}
+
+.container .dashboard {
+  background: #11072e !important;
+}
+
+.container .post {
+  background: #f3f3f7;
+  padding: 20px 10px;
+  margin-top: 50px;
+}
+
+.container .post h3 {
+  text-align: center;
+}
+
+.container .post form {
+  width: 95%;
+  margin: 0 auto;
+  border-radius: 11px;
+}
+
+.container .post form .name {
+  margin: 10px auto;
+}
+
+.container .post form .name input {
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid grey;
+  height: 60px;
+  -webkit-box-shadow: none;
+          box-shadow: none;
+  padding: 10px;
+  font-size: 1em;
+}
+
+.container .post form .content {
+  margin-top: 20px;
+}
+
+.container .post form .content textarea {
+  width: 100%;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1em;
+  height: 200px;
+}
+
+.container .post form .submit {
+  margin-top: 5px;
+}
+
+.container .post form .submit button {
+  border-radius: 5px;
+  cursor: pointer;
+  color: white;
+  background-color: #11072e;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  height: 38px;
+  padding: 0 31px;
+  text-align: center;
+  font-size: 13px;
+  font-weight: 600;
+  outline: none;
+  line-height: 38px;
+  letter-spacing: .1rem;
+  text-transform: uppercase;
+  text-decoration: none;
+  white-space: nowrap;
+}
+/*# sourceMappingURL=admin.css.map */

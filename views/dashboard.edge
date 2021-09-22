@@ -1,0 +1,168 @@
+@layout('layouts.headerFooter');
+
+@section('content')
+<section class="prompt">
+    <div class="wrap">
+        <form action="">
+            <h3>Almost Done <i class="ri-check-double-line"></i></h3>
+
+            <p>Your registration is almost complete</p>
+            <p class="story">A payment of <a href="#" id="price">$3</a>  is required for the accessing of ExpertSignals cryptocurrency signals, Re:under terms and conditions. However a one month free trial is accessible, which payment would be required after date relapse </p>
+            <br>
+            <label for="agree">I agree</label>
+                   <input type="checkbox" id="freeT" name="agree">
+               
+                   <br>
+            <div class="btn">
+                <button id="continue" type="button">Continue to Free trial</button>
+            </div>
+            <div class="btn">
+
+                <a href="/user/logout">
+                    <button id="decline" type="button" >Decline</button>
+                </a>
+            </div>
+          
+        </form>
+    </div>
+</section>
+
+<section class="menu-area">
+      <div class="wrap menu_container  animate__animated animate__slideInLeft">
+            <div class="container">
+                <div class="image">
+                    <img class=" animate__infinite animate__headShake animate__animated" src="/images/user_hypo.png" alt="user avartar">
+                </div>
+                <div class="greet">
+                    <h2>Invest, {{name}}</h2>
+                </div>
+      
+                <nav>
+                    <ul>
+                        <li onclick=""><i class="ri-home-4-line"></i>&nbsp; Home</li>
+                        <li><a href=""><i class="ri-bookmark-3-line"></i>&nbsp; Bookmarks</a></li>
+                        <li><a href=""></a>
+                            <i class="ri-layout-bottom-2-line"></i>&nbsp; Plans</li>
+                        <li><a href=""></a>
+                            <i class="ri-gift-2-line"></i>&nbsp;  Referrals</li>
+                        <li><a href=""></a>
+                            <i class="ri-bank-card-2-line"></i>&nbsp;  Payment</li>
+                    </ul>
+                </nav>
+            </div>
+      </div>
+</section>
+
+<div class="block container">
+    <div class="dashboard">
+        <div class="welcome">
+           @if(from)
+              <h1>{{from}}</h1>
+           @else
+             <h1>Welcome Back</h1>
+           @endif
+        </div>
+        <div class="welcome-img">
+            <div class="image">
+                <img src="" alt="">
+            </div>
+        </div>
+    </div>
+
+    <section class="signals">
+        <h3>Latest Signals</h3>
+        <div class="signal-field">
+              @each(post in posts)
+                 <div class="signal-block">
+                     <h2>{{post.name}}</h2>
+                     <div class="text">
+                      <P> {{decrypt(post.signal)}}</p>
+                     </div>
+                     <div class="date">
+                        <p>{{post.date.toDateString()}}</p>
+                     </div>
+                 </div>
+              @endeach
+        </div>
+    </section>
+
+    <section class="blog-sequels">
+        <h2>Read <i class="ri-heart-2-line"></i></h2>
+       <div class="swiper-container">
+           <div class="swiper-wrapper">
+               <div class="swiper-slide">
+                  <div class="wrap">
+                      <p>John Doe</p>
+                     <h2>How i made a career off trading crypto</h2>
+                  </div>
+               </div>
+               <div class="swiper-slide">
+                  <div class="wrap">
+                      <p>John Doe</p>
+                     <h2>How i made a career off trading crypto</h2>
+                  </div>
+               </div>
+               <div class="swiper-slide">
+                <div class="wrap">
+                    <p>John Doe</p>
+                   <h2>How i made a career off trading crypto</h2>
+                </div>
+             </div>
+             <div class="swiper-slide">
+                <div class="wrap">
+                    <p>John Doe</p>
+                   <h2>How i made a career off trading crypto</h2>
+                </div>
+             </div>
+             <div class="swiper-slide">
+                <div class="wrap">
+                    <p>John Doe</p>
+                   <h2>How i made a career off trading crypto</h2>
+                </div>
+             </div>
+           </div>
+       </div>
+    </section>
+
+    <section class="learn">
+        <h2>Learn <i class="ri-money-pound-box-line"></i></h2>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+              <div class="swiper-slide">
+                  <div class="wrap ffm1">
+                      <h2>How to trade using Binance</h2>
+                      <div class="image">
+                          <img src="https://miro.medium.com/max/3150/1*Q_kiasWmguU0uvd2RJsINg.png" alt="">
+                      </div>
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <div class="wrap  ffm2">
+                    <h2>All you need to know about pancakeswap</h2>
+                    <div class="image">
+                        <img src="https://cdn.coincircle.com/icons/fallback/pancakeswap.png" alt="">
+                    </div>
+                  </div>
+              </div>
+              <div class="swiper-slide">
+                  <div class="wrap  ffm3">
+                      <h2>How to Invest in etheruem</h2>
+                      <div class="image">
+                        <img src="https://s2.coinmarketcap.com/static/img/coins/200x200/1027.png" alt="">
+                    </div>
+                  </div>
+              </div>
+            </div>
+            <!-- If we need pagination -->
+            <div class="swiper-pagination"></div>
+          </div>
+    </section>
+
+    <section class="referrals">
+        <div class="wrap">
+            <h2>Referrals</h2>
+            <p>(coming soon)</p>
+        </div>
+    </section>
+</div>
+@endsection

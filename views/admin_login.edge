@@ -1,0 +1,18 @@
+@layout('layouts.struct');
+
+@section('formData')
+  <div class="container">
+      <div class="signUp">
+          <h3>I respect you boss</h3>
+
+          <form action="/auth/admin/expertsignals" method="post" encType="application/json">
+            <div class="wrap">
+                <label for="password">Say the magic word</label><br>
+                <input name="password" id="password" type="password" required>
+            </div>
+
+            <button class="submit" type="submit" >Leggo</button> 
+          </form>
+      </div>
+  </div>
+@endsection

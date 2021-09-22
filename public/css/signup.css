@@ -1,105 +1,72 @@
 * {
-    -webkit-box-sizing: border-box;
-            box-sizing: border-box;
-    margin: 0px;
-    padding: 0px;
-  }
-  
-  html {
-    scroll-behavior: smooth;
-  }
-  
-  body {
-      height: 100vh;
-    font-family: 'Montserrat', sans-serif;
-    overflow-x: hidden;
-  
-  }
-  
-  .hide {
-    display: block  !important;
-    overflow: hidden;
-  }
-  .container{
-      width:100%;
-      padding:20px 0px;
-  }
-  .container .signUp{
-      width:100%;
-      margin: 10px auto;
-  }
-  .container .signUp h3{
-      margin:0 auto;
-      max-width:90%;
-      text-align: center;
+  padding: 0px;
+  margin: 0px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
 
-      color: rgb(43, 43, 43);
-  }
-  form{
-      margin: 5% 20px;
-      padding:10px 20px;
-      border-radius: 2%;
-      height:auto;
-      background-color: white;
-      box-shadow: 0px -1px 10px 3px rgb(216, 216, 216);
-  }
-  .wrap{
-      margin:20px 0px;
-  }
-  .wrap input{
-    display: block;
-    height: 38px;
-    width:100%;
-    padding: 0 10px;
-    font-size: 16px;
-    text-decoration: none;
-    white-space: nowrap;
-    border-radius: 4px;
-    border: 1px solid #bbb;
-    cursor: pointer;
-    box-sizing: border-box;
-  }
-  .submit{
-    border-radius: 4px;
-    border: none;
-    cursor: pointer; 
-    display: inline-block;
-    height: 38px;
-    padding: 0 31px;
-    font-size: 13px;
-    font-weight: 600;
-    color:white;
-    background-color:green;
-    line-height: 38px;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-  .back{
-    margin:0 auto;
-    border-radius: 4px;
-    border: 1px solid orange;
-    transform: translateX(40%);
-    cursor: pointer; 
-    display: inline-block;
-    height: 38px;
-    padding: 0 20px;
-    font-size: 13px;
-        font-weight: 600;
-    color:rgb(17, 7, 46);
-    background-color:rgb(255, 255, 255);
-    line-height: 38px;
-    letter-spacing: .1rem;
-    text-transform: uppercase;
-    text-decoration: none;
-    white-space: nowrap;
-  }
-  .loginLink{
-    margin:8px 0px;
-    font-size: 0.9em ;
+body {
+  font-family: 'Raleway', sans-serif;
+}
 
-  }
-  .loginLink a {
-    color: rgb(0, 149, 194);
-  }
+.container .signUp {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container .signUp .img {
+  width: 90%;
+  margin: 0 auto;
+}
+
+.container .signUp .img img {
+  width: 100%;
+}
+
+.container .signUp h3 {
+  color: #134E5E;
+  font-size: 2em;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.container .signUp form {
+  margin: 20% auto;
+}
+
+.container .signUp form input {
+  display: block;
+  color: white;
+  margin: 20px 0px;
+  width: 100%;
+  padding: 10px 0px;
+  border-top: none;
+  outline-color: green;
+  border-left: none;
+  border-bottom: 1px solid #d1d0d0;
+  border-right: none;
+  font-size: 1em;
+  font-family: 'Raleway';
+}
+
+.container .signUp form button {
+  background: #134E5E;
+  padding: 20px 0px;
+  width: 100%;
+  outline: none;
+  border: none;
+  color: white;
+  font-family: 'Raleway';
+  border-radius: 10px;
+  font-size: 1.1em;
+}
+
+.container .signUp form .loginLink {
+  margin-top: 5%;
+}
+
+.container .signUp form .loginLink a {
+  color: #05681f;
+  text-decoration: none;
+}
+/*# sourceMappingURL=signup.css.map */

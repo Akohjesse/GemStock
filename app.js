@@ -39,9 +39,12 @@ app.use(bodyParser.json())
 app.use('/user', user);
 app.use(admin)
 
-app.use(express.static('public'));
- app.use(index);
 
+
+if (process.env.NODE_ENV = "Production" || process.env.NODE_ENV === "staging"){
+    app.use(express.static('public'));
+    app.use(index);
+}
 
 
 app.listen(port, ()=>{

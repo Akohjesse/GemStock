@@ -15,7 +15,7 @@ body {
 }
 
 .container .signUp .img {
-  width: 90%;
+  width: 50%;
   margin: 0 auto;
 }
 
@@ -31,7 +31,7 @@ body {
 }
 
 .container .signUp form {
-  margin: 20% auto;
+  margin: 15% auto;
 }
 
 .container .signUp form input {

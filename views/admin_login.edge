@@ -3,15 +3,18 @@
 @section('formData')
   <div class="container">
       <div class="signUp">
-          <h3>I respect you boss</h3>
+        <div class="img">
+          <img src="/images/Update.png" alt="">
+        </div>
+          <h3>Welcome Admin</h3>
 
           <form action="/auth/admin/expertsignals" method="post" encType="application/json">
-            <div class="wrap">
-                <label for="password">Say the magic word</label><br>
-                <input name="password" id="password" type="password" required>
-            </div>
-
-            <button class="submit" type="submit" >Leggo</button> 
+            <input name="email" id="email" placeholder="Email" type="email">
+            <div class="password">
+              <input name="password" placeholder="Pass-code" id="password" type="password" required>
+              <span><i class="ri-eye-fill" id="togglePassword"></i></span>
+          </div>
+            <button class="submit" type="submit" >Enter</button> 
           </form>
       </div>
   </div>

@@ -11,7 +11,7 @@
 }
 
 .container .dashboard {
-  background: #11072e !important;
+  background: #134E5E !important;
 }
 
 .container .post {
@@ -65,7 +65,7 @@
   border-radius: 5px;
   cursor: pointer;
   color: white;
-  background-color: #11072e;
+  background-color: #134E5E;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
   height: 38px;

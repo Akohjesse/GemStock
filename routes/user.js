@@ -28,7 +28,7 @@ router.post('/signup',
       check("password", "Password must be more than 6 characters").isLength({min:6})
     ],
      (req, res)=>{
-        const {username,email, password, password2} = req.body;
+        const {username,email, password} = req.body;
           
     
     const errors = validationResult(req);
@@ -42,16 +42,10 @@ router.post('/signup',
                 errors : errors,
                 name : username,
                 email : email,
-                password : password,
-                confirmedPassword: password2
+                password : password
                })
             } 
             
-            if(password !== password2) {
-                return res.status(400).json({
-                    msg: "Passwords do not match"
-                });
-            }
     User.findOne({email : email}).exec((err,user)=>{ 
         if(user) {
             return res.status(400).json({

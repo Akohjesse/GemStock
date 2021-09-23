@@ -1,9 +1,6 @@
 @layout('layouts.struct');
 
 @section('formData')
-<div class="back">
-
-</div>
 <div class="container">
     <div class="signUp">
        <div class="img">
@@ -16,7 +13,10 @@
         <form id="form" action="/user/signup" method ="POST" encType="application/json">  
          <input name="username" id="username" type="text" placeholder="Name" required>
             <input name="email" autocomplete type="email" placeholder="Email" required>
-            <input name="password" type="password" placeholder="Password" required >
+            <div class="password">
+              <input name="password" placeholder="Password" id="password" type="password" required>
+              <span><i class="ri-eye-fill" id="togglePassword"></i></span>
+          </div>
              <button>Create Account</button>
               <div class="loginLink">
                 <a href="/user/login">Already have an account? Login here</a>
@@ -24,7 +24,7 @@
         </form>
    </div>
 
-   
+ 
 </div>
 @endsection
    

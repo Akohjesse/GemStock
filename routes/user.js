@@ -32,20 +32,19 @@ router.post('/signup',
           
     
     const errors = validationResult(req);
-    console.log(errors)
-        if (!errors.isEmpty()) {
-            return res.status(400).json({
-                errors: errors.array()
-            });
-        }
-        if(errors.length > 0 ) {
+    if (!errors.isEmpty()) {
+        return res.status(400).json({
+            errors: errors.array()
+        });
+    }
+    if(errors.length > 0 ) {
             res.render('signup', {
                 errors : errors,
                 name : username,
                 email : email,
                 password : password
                })
-            } 
+    } 
             
     User.findOne({email : email}).exec((err,user)=>{ 
         if(user) {

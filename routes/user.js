@@ -32,6 +32,7 @@ router.post('/signup',
           
     
     const errors = validationResult(req);
+    console.log(errors)
         if (!errors.isEmpty()) {
             return res.status(400).json({
                 errors: errors.array()
@@ -48,9 +49,7 @@ router.post('/signup',
             
     User.findOne({email : email}).exec((err,user)=>{ 
         if(user) {
-            return res.status(400).json({
-                msg: "User Already Exists"
-            });
+            Window.prompt('Email already in use')
         } 
         else {
             const user = new User({

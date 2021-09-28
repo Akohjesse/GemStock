@@ -6,10 +6,12 @@
        <div class="img">
         <img src="/images/Congratulations.png" alt="sign-up">
        </div>
-        <h3>
-            Get Started
-        </h3>
-
+        <h3>Get Started</h3>
+       @if(errors)
+           @each(item in errors)
+              <h4>{{item.msg}}</h4>
+           @endeach
+       @endif
         <form id="form" action="/user/signup" method ="POST" encType="application/json">  
          <input name="username" id="username" type="text" placeholder="Name" required>
             <input name="email" autocomplete type="email" placeholder="Email" required>

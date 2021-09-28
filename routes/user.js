@@ -2,11 +2,12 @@ const express = require('express');
 const router = express.Router();
 const path = require('path');
 const User = require('../models/User');
-const { check, validationResult} = require("express-validator");
 const bcrypt = require('bcryptjs');
 const passport = require('passport');
-const {encrypt, decrypt} = require('../config/encrypt')
+const {encrypt, decrypt} = require('../config/encrypt');
+const { check, validationResult} = require("express-validator");
 const Post =  require("../models/Post");
+
 require("../config/passport")(passport)
 
 router.get('/signUp', (req, res)=> {
@@ -22,33 +23,41 @@ router.get('/login' , (req, res)=>{
     })
 })
 
-router.post('/signup', 
-      [
-      check("email", "Please enter a valid username").isEmail(), 
-      check("password", "Password must be more than 6 characters").isLength({min:6})
-    ],
-     (req, res)=>{
-        const {username,email, password} = req.body;
-          
-    
-    const errors = validationResult(req);
-    if (!errors.isEmpty()) {
-        return res.status(400).json({
-            errors: errors.array()
-        });
+router.post('/signup', [ check("email", "Please enter a valid username").isEmail()],  (req, res)=>{
+     const {username,email, password} = req.body;
+    let errors = []  
+  
+    const result = validationResult(req);
+    if(!result.isEmpty()){
+        let error = result.array();
+        errors.push({msg: error[0].msg})
     }
-    if(errors.length > 0 ) {
-            res.render('signup', {
+   if(password.length < 6){
+     errors.push({msg: 'Password must be atleast 6 characters'})
+   }
+   if(password.length > 23){
+    errors.push({msg: 'Password must not be more than 30 characters'})
+  }  
+  if(errors.length > 0 ) {
+
+        res.render('signup', {
                 errors : errors,
                 name : username,
                 email : email,
-                password : password
-               })
-    } 
-            
+                password : password,
+       
+         })
+    }
+    else{
+       
     User.findOne({email : email}).exec((err,user)=>{ 
         if(user) {
-            Window.prompt('Email already in use')
+           res.render('signup', {
+               errors:{
+                   msg: 'User already exists, Login instead'
+               }    
+           })
+           
         } 
         else {
             const user = new User({
@@ -64,7 +73,7 @@ router.post('/signup',
                   user.save(async (err)=>{
                         if(err) throw err;
                         
-                        else req.flash('success_msg','SignUp successful');   var posts = await Post.find({}); posts = posts.reverse(); res.render('dashboard', {
+                        else  var posts = await Post.find({}); posts = posts.reverse(); res.render('dashboard', {
                             name: user.username,
                             decrypt,
                             from: 'Welcome To Expert Signals',
@@ -74,10 +83,10 @@ router.post('/signup',
                     
                 })
             })
-           
-           
         }
     })
+    }
+
 });
 
 router.post('/login',  (req,res,next)=> { passport.authenticate('local',

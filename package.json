@@ -31,7 +31,6 @@
     "express-session": "^1.17.2",
     "express-validator": "^6.12.0",
     "mongoose": "^5.13.2",
-    "nodemon": "^2.0.12",
     "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "swiper": "^6.7.5",

@@ -41,6 +41,14 @@ body {
   text-align: center;
 }
 
+.container .signUp h4 {
+  background: #ff4107;
+  color: white;
+  padding: 10px;
+  margin: 10px 0px;
+  border-radius: 6px;
+}
+
 .container .signUp form {
   margin: 10% auto;
 }

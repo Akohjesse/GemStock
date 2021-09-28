@@ -7,7 +7,9 @@
             <img src="/images/Welcome.png" alt="">
         </div>
         <h3>Welcome, Login to your account</h3>
-
+        @if(error != '')
+           <h4>{{error}}</h4>
+         @endif
         <form action="/user/login" enctype="application/json""  method="post">
             <input name="email" id="email" placeholder="Email" type="email" required>
             <div class="password">

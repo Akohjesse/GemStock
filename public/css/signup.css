@@ -41,12 +41,21 @@ body {
   text-align: center;
 }
 
-.container .signUp h4 {
+.container .signUp .error {
   background: #ff5d2cce;
   color: white;
-  padding: 10px;
-  margin: 10px 0px;
+  padding: 20px;
+  margin-top: 20px;
   border-radius: 6px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 
 .container .signUp form {

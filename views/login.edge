@@ -8,7 +8,10 @@
         </div>
         <h3>Welcome, Login to your account</h3>
         @if(error != '')
-           <h4>{{error}}</h4>
+          <div class="error animate__animated animate__fadeIn">
+            <h4>{{error}}</h4>
+            <div class="btn">X</div>
+          </div>
          @endif
         <form action="/user/login" enctype="application/json""  method="post">
             <input name="email" id="email" placeholder="Email" type="email" required>
@@ -18,7 +21,7 @@
             </div>
             <button>Enter</button>
             <div class="loginLink">
-                <a href="/user/login">New User? Sign up here</a>
+                <a href="/user/signUp">New User? Sign up here</a>
               </div>
         </form>
     </div>

@@ -8,8 +8,11 @@
        </div>
         <h3>Get Started</h3>
        @if(errors)
-           @each(item in errors)
-              <h4>{{item.msg}}</h4>
+           @each(error in errors)
+           <div class="error animate__animated animate__fadeIn">
+            <h4>{{error.msg}}</h4>
+            <div class="btn">X</div>
+          </div>
            @endeach
        @endif
         <form id="form" action="/user/signup" method ="POST" encType="application/json">  

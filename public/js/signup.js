@@ -6,3 +6,7 @@ togglePassword.addEventListener('click', function (e) {
   password.setAttribute('type', type);
    this.classList.toggle('ri-eye-off-fill');
   });
+
+  document.querySelector('.error .btn').addEventListener('click', (e)=>{
+     e.target.parentElement.remove()
+  })
